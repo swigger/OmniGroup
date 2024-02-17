@@ -75,6 +75,7 @@
     dispatch_once(&once, ^{
         edgeColor = [[NSColor blackColor] colorWithAlphaComponent:0.25f];
         edgeGradient = [[NSGradient alloc] initWithStartingColor:[NSColor clearColor] endingColor:edgeColor];
+        (void) edgeGradient;
     });
     
     NSRect edgeRect;

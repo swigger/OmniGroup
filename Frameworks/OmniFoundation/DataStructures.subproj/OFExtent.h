@@ -9,6 +9,7 @@
 
 #if !defined(TARGET_OS_IPHONE) || !TARGET_OS_IPHONE
 #import <Foundation/NSGeometry.h>
+#import <CoreGraphics/CGGeometry.h>
 #else
 #import <CoreGraphics/CGGeometry.h>
 #endif
@@ -26,7 +27,7 @@ typedef struct _OFExtent {
 static inline OFExtent OFExtentMake(CGFloat location, CGFloat length)
 {
     OBPRECONDITION(length >= 0.0);
-    
+
     OFExtent e;
     e.location = location;
     e.length = length;
@@ -100,7 +101,7 @@ static inline OFExtent OFExtentIntersection(OFExtent a, OFExtent b)
 {
     CGFloat start = MAX(OFExtentMin(a), OFExtentMin(b));
     CGFloat end = MIN(OFExtentMax(a), OFExtentMax(b));
-    
+
     if (end < start)
         return OFExtentMake(0.0f,0.0f);
     else
@@ -113,7 +114,7 @@ static inline OFExtent OFExtentInset(OFExtent a, CGFloat delta)
 {
     if (a.length < delta*2)
         return OFExtentMake(OFExtentMid(a), 0.0f);
-    
+
     CGFloat min = OFExtentMin(a) + delta;
     CGFloat max = OFExtentMax(a) - delta;
     OBASSERT(min <= max);
@@ -171,14 +172,14 @@ static inline CGFloat OFExtentPercentForValue(OFExtent e, CGFloat v)
     return (v - OFExtentMin(e)) / OFExtentLength(e);
 }
 
-// 
+//
 static inline OFExtent OFExtentAsNormalizedPoritionOfExtent(OFExtent toNormalize, OFExtent normalizeAgainst)
 {
     CGFloat p1 = OFExtentPercentForValue(normalizeAgainst, OFExtentMin(toNormalize));
     CGFloat p2 = OFExtentPercentForValue(normalizeAgainst, OFExtentMax(toNormalize));
 
     OFExtent normalized = OFExtentFromLocations(p1, p2);
-    
+
     return normalized;
 }
-                                                            
+

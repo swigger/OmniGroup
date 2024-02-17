@@ -182,7 +182,7 @@
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					8DD76F740486A8DE00D96B5E = {
-						DevelopmentTeam = 34YW5XSRB7;
+						DevelopmentTeam = $(OMNI_DEVELOPMENT_TEAM);
 						LastSwiftMigration = "";
 					};
 				};
@@ -252,6 +252,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				PRODUCT_BUNDLE_IDENTIFIER = net.swigger.fixstringsfile;
 				PRODUCT_NAME = FixStringsFile;
 			};
 			name = Debug;
@@ -262,6 +264,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				PRODUCT_BUNDLE_IDENTIFIER = net.swigger.fixstringsfile;
 				PRODUCT_NAME = FixStringsFile;
 			};
 			name = Release;

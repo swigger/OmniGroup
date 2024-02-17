@@ -57,6 +57,7 @@ RCS_ID("$Id$");
     
     [_database.connection performSQLAndWaitWithError:&error block:^BOOL(struct sqlite3 *sqlite, NSError **blockError) {
         XCTAssertTrue([statement prepareIfNeededWithSQLite:sqlite error:blockError]);
+        return TRUE;
     }];
     
     XCTAssertNoThrow([statement release]);
@@ -72,6 +73,7 @@ RCS_ID("$Id$");
     [_database.connection performSQLAndWaitWithError:&error block:^BOOL(struct sqlite3 *sqlite, NSError **blockError) {
         XCTAssertTrue([statement prepareIfNeededWithSQLite:sqlite error:blockError]);
         XCTAssertNoThrow([statement release]);
+        return TRUE;
     }];
 }
 
@@ -84,6 +86,7 @@ RCS_ID("$Id$");
     
     [_database.connection performSQLAndWaitWithError:&error block:^BOOL(struct sqlite3 *sqlite, NSError **blockError) {
         XCTAssertTrue([statement prepareIfNeededWithSQLite:sqlite error:blockError]);
+        return TRUE;
     }];
     
     OBExpectDeallocation(_database.connection);

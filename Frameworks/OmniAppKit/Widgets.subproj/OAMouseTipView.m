@@ -269,7 +269,7 @@ static NSParagraphStyle *mousetipParagrphStyle;
     requiredSize.height += 2*TEXT_Y_INSET;
     
     requiredSize = [self convertSize:requiredSize fromView:titleView];
-    
+    (void)totalHeight;
     return requiredSize;
 }
 
