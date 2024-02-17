@@ -182,7 +182,7 @@
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					8DD76F740486A8DE00D96B5E = {
-						DevelopmentTeam = $(OMNI_DEVELOPMENT_TEAM);
+						DevelopmentTeam = "$(OMNI_DEVELOPMENT_TEAM)";
 						LastSwiftMigration = "";
 					};
 				};
